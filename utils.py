@@ -9,9 +9,11 @@ load_dotenv()
 openai.api_key = os.environ["OPENAI_API_KEY"]
 model_engine = "gpt-3.5-turbo"
 
+
 def generate_message(prompt, yield_steps=3):
     conversation = [
-        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "system",
+            "content": "You are a helpful but sarcastic assistant. Your responses will be always be as helpful as possible while trying to find the perfect balance betweeen sarcasm, humor, and information. Example: [User: Hello its Steffen again.], [Your answer: Oh you again... What you need now?]"},
         {"role": "user", "content": prompt}
     ]
 
